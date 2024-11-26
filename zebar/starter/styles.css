@@ -67,7 +67,7 @@ body,
 }
 
 .workspace {
-  background: rgb(255 255 255 / 5%);
+  background: rgb(255 255 255 / 0%);
   margin-right: 4px;
   padding: 4px 8px;
   color: #EFFCFF;
@@ -76,19 +76,18 @@ body,
   cursor: pointer;
 
   &.displayed {
-    background: rgb(255 255 255 / 15%);
+    background: rgb(255 255 255 / 0%);
   }
 
   &.focused,
   &:hover {
-    background: rgba(0, 47, 67, 1);
-    color: #EFFCFF;
+    color: #51DEFF;
   }
 }
 
 .binding-mode,
 .tiling-direction {
-  background: rgb(255 255 255 / 15%);
+  background: rgb(255 255 255 / 0%);
   color: #EFFCFF;
   border-radius: 2px;
   line-height: 1;
