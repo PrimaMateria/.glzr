@@ -119,3 +119,10 @@ body,
 #finapiLogo {
   height: 26px;
 }
+
+.media {
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+  gap: 4px;
+}

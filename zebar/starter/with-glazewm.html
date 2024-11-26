@@ -39,6 +39,7 @@
         battery: { type: 'battery' },
         memory: { type: 'memory' },
         weather: { type: 'weather' },
+        media: { type: 'media' },
       });
 
       createRoot(document.getElementById('root')).render(<App />);
@@ -147,7 +148,16 @@
               )}
             </div>
 
-            <div className="center"></div>
+            <div className="center">
+              {output?.media?.session && (<div className="media">
+                {output.media.session.artist && (
+                  <span>{output.media.session.artist} -</span>
+                )}  
+                {output.media.session.title && (
+                  <span>{output.media.session.title}</span>
+                )}
+              </div>)}
+            </div>
 
             <div className="right">
               {output.glazewm && (
