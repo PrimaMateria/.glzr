@@ -5,7 +5,7 @@
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
 
 i {
-  color: #00ADDF;
+  color: #FFFF00;
   margin-right: 7px;
 }
 
@@ -69,6 +69,7 @@ body,
 .workspace {
   background: rgb(255 255 255 / 0%);
   margin-right: 4px;
+  margin-top: 3px;
   padding: 4px 8px;
   color: #EFFCFF;
   border: none;
@@ -81,7 +82,7 @@ body,
 
   &.focused,
   &:hover {
-    color: #51DEFF;
+    color: #FF0;
   }
 }
 
@@ -124,4 +125,16 @@ body,
   flex-direction: row;
   font-size: 10px;
   gap: 4px;
+}
+
+h1 {
+  font-family: "Anton SC";
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+  margin-right: 24px;
+  background: linear-gradient(to top, red, yellow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
