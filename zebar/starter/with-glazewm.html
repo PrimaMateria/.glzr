@@ -40,7 +40,7 @@
         network: { type: 'network' },
         glazewm: { type: 'glazewm' },
         cpu: { type: 'cpu' },
-        date: { type: 'date', formatting: 'EEEE	dd. MMMM T' },
+        date: { type: 'date', formatting: 'dd. MM T' },
         battery: { type: 'battery' },
         memory: { type: 'memory' },
         weather: { type: 'weather' },
@@ -129,6 +129,8 @@
           }
         }
 
+        console.log(output.glazewm);
+
         return (
           <div className="app">
             <div className="left">
@@ -136,17 +138,18 @@
 
               {output.glazewm && (
                 <div className="workspaces">
-                  {output.glazewm.currentWorkspaces.map(workspace => (
+                  {[...Array(9).keys()].map(idx => idx+1).map(num => (
                     <button
-                      className={`workspace ${workspace.hasFocus && 'focused'} ${workspace.isDisplayed && 'displayed'}`}
+                      className={`workspace
+                      ${output.glazewm.focusedWorkspace.displayName === `${num}` && 'focused'}`}
                       onClick={() =>
                         output.glazewm.runCommand(
-                          `focus --workspace ${workspace.name}`,
+                          `focus --workspace ${num}`,
                         )
                       }
-                      key={workspace.name}
+                      key={num}
                     >
-                      {workspace.displayName ?? workspace.name}
+                      {num}
                     </button>
                   ))}
                 </div>
