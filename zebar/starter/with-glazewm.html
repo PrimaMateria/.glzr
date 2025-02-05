@@ -138,10 +138,16 @@
 
               {output.glazewm && (
                 <div className="workspaces">
-                  {[...Array(9).keys()].map(idx => idx+1).map(num => (
+                  {[...Array(9).keys()].map(idx => idx+1).map(num => { 
+                  const workspace = output.glazewm.allWorkspaces.find(w=>w.displayName === `${num}`);
+
+
+                  return (
                     <button
-                      className={`workspace
-                      ${output.glazewm.focusedWorkspace.displayName === `${num}` && 'focused'}`}
+                      className={`workspace 
+                        ${workspace?.hasFocus ? 'focused' : ''}
+                        ${workspace?.children && workspace.children.length > 0 ? 'withChildren' : ''}
+                      `}
                       onClick={() =>
                         output.glazewm.runCommand(
                           `focus --workspace ${num}`,
@@ -151,7 +157,8 @@
                     >
                       {num}
                     </button>
-                  ))}
+                  );
+                  })}
                 </div>
               )}
             </div>
