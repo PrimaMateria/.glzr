@@ -80,8 +80,7 @@ body,
     background: rgb(255 255 255 / 0%);
   }
 
-  &.focused,
-  &:hover {
+  &.focused {
     color: #FF0;
   }
 }
